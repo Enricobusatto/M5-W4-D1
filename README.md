@@ -1,1 +1,2 @@
-EpicBook Version 2
+EpicBook Version 3
+
