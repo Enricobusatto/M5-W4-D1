@@ -1,8 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css.components/myNav.css';
-import { Navbar, Nav, Container, Form } from 'react-bootstrap';
+import { Navbar, Nav, Container, Form} from 'react-bootstrap';
 import logo from '../assets/logo.svg';
 import { useTheme } from './ContextComponents/ThemeContext';
+import { Link, NavLink } from 'react-router';
 
 function MyNav({ selectedCategory, setSearchTitle, setSelectedCategory, categories, searchTitle }) {
   const { theme, toggleTheme } = useTheme();
@@ -10,7 +11,7 @@ function MyNav({ selectedCategory, setSearchTitle, setSelectedCategory, categori
   return (
     <Navbar expand="lg" className={`navbar  ${theme}`} variant={theme}>
       <Container>
-        <Navbar.Brand href="#">
+        <Navbar.Brand to='/home' as={Link}>
           <img
             src={logo}
             alt="logo"
@@ -21,9 +22,9 @@ function MyNav({ selectedCategory, setSearchTitle, setSelectedCategory, categori
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
           <Nav className="me-auto">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">About</Nav.Link>
-            <Nav.Link href="#">Browser</Nav.Link>
+            <Nav.Link to='/home' as={ NavLink}>Home</Nav.Link>
+            <Nav.Link to='/about' as={NavLink}>About</Nav.Link>
+            <Nav.Link as={NavLink}>Browser</Nav.Link>
           </Nav>
 
           <Form.Select

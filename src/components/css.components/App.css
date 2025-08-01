@@ -20,6 +20,7 @@ body.theme-dark .navbar {
 body.theme-dark .footer {
   background-color: #1f1f1f;
 }
+
 /* Per tag <i> generici (testo in corsivo) */
 body.theme-light i {
   color: #222;
@@ -38,4 +39,9 @@ body.theme-light i[class*="fa-"] {
 body.theme-dark i[class*="bi-"],
 body.theme-dark i[class*="fa-"] {
   color: #ddd;
+}
+
+.error {
+  font-size: 80px;
+  vertical-align: middle
 }

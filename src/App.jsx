@@ -14,6 +14,10 @@ import './components/css.components/App.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import CommentArea from './components/CommentArea.jsx';
 import { SelectedProvider } from './components/ContextComponents/selectedContext.jsx';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import About from './components/Routes/About.jsx';
+import NotFound from './components/Routes/NotFound.jsx';
+import BookDetail from './components/Routes/BookDetail.jsx';
 
 
 // Unione di tutti i libri in un unico array
@@ -38,23 +42,30 @@ function App() {
     });
     return (
         // <StrictMode>
-        <ThemeProvider>
-            <MyNav setSearchTitle={setSearchTitle} setSelectedCategory={setSelectedCategory} categories={categories} searchTitle={searchTitle} selectedCategory={selectedCategory} />
-            <Welcome />
-            <SelectedProvider>
-                <Container>
-                    <Row>
-                        <Col md={7} lg={8}>
-                            <AllTheBooks filteredBooks={filteredBooks} searchTitle={searchTitle} selectedCategory={selectedCategory} />
-                        </Col>
-                        <Col md={5} lg={4}>
-                            <CommentArea />
-                        </Col>
-                    </Row>
-                </Container>
-            </SelectedProvider>
-            <MyFooter />
-        </ThemeProvider>
+        <BrowserRouter>
+            <ThemeProvider>
+                <MyNav setSearchTitle={setSearchTitle} setSelectedCategory={setSelectedCategory} categories={categories} searchTitle={searchTitle} selectedCategory={selectedCategory} />
+                <SelectedProvider>
+                    <Container>
+                        <Row>
+                            <Col md={7} lg={8}>
+                                <Routes>
+                                    <Route path='/' element= {<Welcome/>} />
+                                    <Route path='/home' element={<AllTheBooks filteredBooks={filteredBooks} searchTitle={searchTitle} selectedCategory={selectedCategory} />} />
+                                    <Route path='/about' element={<About />} />
+                                    <Route path='/book-detail/:id' element={<BookDetail />}/>
+                                    <Route path='*' element={<NotFound />} />
+                                </Routes>
+                            </Col>
+                            <Col md={5} lg={4}>
+                                <CommentArea />
+                            </Col>
+                        </Row>
+                    </Container>
+                </SelectedProvider>
+                <MyFooter />
+            </ThemeProvider>
+        </BrowserRouter>
 
         // </StrictMode>,
     )

@@ -3,6 +3,7 @@ import './css.components/SingleBook.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useSelected } from './ContextComponents/selectedContext';
+import { Link } from 'react-router';
 
 
 
@@ -28,8 +29,8 @@ function SingleBook({ book }) {
                     <Card.Text>Category : {book.category}</Card.Text>
                     <Card.Text className="text-muted">Price: {book.price} $</Card.Text>
                 </div>
-                <Button variant="success" className="mt-3">
-                    Add To Cart
+                <Button variant="success" className="mt-3" to='/book-detail' as={Link}>
+                    Book Details
                 </Button>
             </Card.Body>
         </Card>
