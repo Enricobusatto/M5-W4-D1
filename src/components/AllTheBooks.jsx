@@ -25,7 +25,7 @@ function AllTheBooks({ filteredBooks, searchTitle, selectedCategory}) {
       {/* layout griglia */}
       <Row>
         {booksForPage.map((book) => (
-          <Col key={book.asin} xs={12} sm={6} md={6} lg={4} className="mb-4 mt-5">
+          <Col key={book.asin} xs={12} sm={6} md={6} lg={3} className="mb-4 mt-5">
             <SingleBook book={book} />
           </Col>
         ))}
@@ -45,8 +45,6 @@ function AllTheBooks({ filteredBooks, searchTitle, selectedCategory}) {
 
 export default AllTheBooks;
 
-
-// console.log ("Tutti i libri:", allBooks);
 
 //*********CODICE PER VERIFICARE DUPLICATI*****************
 

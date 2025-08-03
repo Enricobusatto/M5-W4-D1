@@ -4,16 +4,19 @@ import Spinner from 'react-bootstrap/Spinner';
 import AddComment from './AddComment.jsx';
 import { useSelected } from './ContextComponents/selectedContext.jsx';
 import EditComment from './EditComment.jsx';
+import { useParams } from 'react-router';
 
 const key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODViMWFiZjk2OGRlNTAwMTU1MmEzZTgiLCJpYXQiOjE3NTMwMjU5OTQsImV4cCI6MTc1NDIzNTU5NH0.AP3341mMG33Mc5lqmhYFaDj3z01WErAWIRwmHX6alnE';
 
 function CommentArea() {
-  const { selected: asin } = useSelected()
+  // const { selected: asin } = useSelected()
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(false); // LOADER
   const [error, setError] = useState(false);    // ERRORE
   const [showEditModal, setShowEditModal] = useState(false); //MODALE X EDIT
   const [selectedComment, setSelectedComment] = useState(null);
+
+  const {asin} = useParams();
 
   const handleEditClick = (comment) => {
     setSelectedComment(comment);

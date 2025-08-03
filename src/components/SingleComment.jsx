@@ -1,6 +1,5 @@
 import './css.components/SingleComment.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import EditComment from './EditComment';
 
 function SingleComment({ comment, deleteComment, editComment }) {
 

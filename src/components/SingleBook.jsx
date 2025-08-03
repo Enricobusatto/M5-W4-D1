@@ -29,7 +29,7 @@ function SingleBook({ book }) {
                     <Card.Text>Category : {book.category}</Card.Text>
                     <Card.Text className="text-muted">Price: {book.price} $</Card.Text>
                 </div>
-                <Button variant="success" className="mt-3" to='/book-detail' as={Link}>
+                <Button variant="success" className="mt-3" to={'/book/'+ book.asin} as={Link}>
                     Book Details
                 </Button>
             </Card.Body>

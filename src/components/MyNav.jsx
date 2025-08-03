@@ -24,7 +24,7 @@ function MyNav({ selectedCategory, setSearchTitle, setSelectedCategory, categori
           <Nav className="me-auto">
             <Nav.Link to='/home' as={ NavLink}>Home</Nav.Link>
             <Nav.Link to='/about' as={NavLink}>About</Nav.Link>
-            <Nav.Link as={NavLink}>Browser</Nav.Link>
+            <Nav.Link to='/faqs' as={NavLink}>FAQs</Nav.Link>
           </Nav>
 
           <Form.Select

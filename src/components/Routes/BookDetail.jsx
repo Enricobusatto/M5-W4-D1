@@ -1,9 +1,13 @@
 import { useParams } from "react-router"
+import CommentArea from "../CommentArea"
 
 function BookDetail() {
-    const params = useParams()
+    const {asin} = useParams();
     return (
-        <h1>book detail</h1>
+        <>
+            {/* <img>{book.img}</img> */}
+            <CommentArea />
+        </>
     )
 }
 export default BookDetail
